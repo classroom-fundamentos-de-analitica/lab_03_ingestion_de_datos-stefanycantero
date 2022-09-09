@@ -1,3 +1,3 @@
-# LABORATORIO
+# Laboratorio
 
 Ingestion de datos.
