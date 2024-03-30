@@ -23,10 +23,12 @@ def ingest_data():
                 data["cluster"].append(int(data_in_file[0]))
                 data["cantidad_de_palabras_clave"].append(int(data_in_file[1]))
                 data["porcentaje_de_palabras_clave"].append(float(data_in_file[2].replace(",", ".")))
-                data["principales_palabras_clave"].append(" ".join(data_in_file[3:]).replace(".", "").strip().replace("%", ""))
+                data["principales_palabras_clave"].append(" ".join(data_in_file[3:]).replace(".", "").strip().replace("%", " "))
             elif data_in_file:
                 data["principales_palabras_clave"][-1] += " ".join(data_in_file).replace(".", "").strip() + " "
 
         df = pd.DataFrame(data)
 
     return df
+
+# print(ingest_data())
